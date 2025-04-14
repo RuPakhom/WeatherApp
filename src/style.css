@@ -1,0 +1,261 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  font-size:16px;
+  
+}
+
+body{
+  font-family: "Inter", sans-serif;
+}
+
+.search-container{
+  display:flex;
+  max-width:300px;
+  padding:10px;
+  margin:0 auto;
+  justify-content: center;
+  gap:5px;
+}
+
+#city {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#city:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+#search {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+#search:hover {
+  background-color: #2563eb;
+}
+
+#search:active {
+  transform: scale(0.98);
+}
+
+.current-card{
+  display:grid;
+
+  grid-template-columns: 1fr 100px;
+  grid-template-areas: 
+  "city date"
+  "current-temp icon"
+  "conditions icon"
+  "min-max icon";
+  row-gap: 0.1rem;
+
+  background-color: #f0f4f8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #0f172a;
+
+  padding:1.5rem;
+  max-width:300px;
+  margin:0 auto;
+  border-radius:1rem;
+  align-items: center;
+
+}
+
+.city{
+  grid-area:city;
+  font-size:1.5rem;
+  font-weight: 600;
+  color:#1e3a8a;
+}
+
+.date{
+  grid-area:date;
+  font-size:0.6rem;
+  color:#63748b;
+}
+
+.current-temp{
+  grid-area:current-temp;
+  font-size: 3rem;
+  font-weight: 600;
+  color:#0f172a;
+}
+
+.icon{
+  grid-area:icon;
+
+  width:100%;
+  align-self: center;
+  justify-self: center;
+
+}
+
+
+
+.conditions{
+  grid-area:conditions;
+  font-size:1rem;
+  color:#475569;
+}
+
+.min-max{
+  grid-area:min-max;
+  display:flex;
+  gap:1rem;
+  font-weight: 500;
+}
+
+.min, .min-predict{
+  color:#60a5fa
+}
+
+.max, .max-predict{
+  color:#ef4444;
+}
+
+.today-predict-card{
+  display:grid;
+  grid-template-columns: repeat(10,50px);
+  gap:0.5rem;
+
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  color: #334155;
+  border:1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding:1rem;
+
+  max-width: fit-content;
+  overflow-x: auto;
+  align-items: center;
+  justify-content: center;
+  margin:1rem auto;
+}
+
+.predict-card{
+  display:grid;
+  grid-template-rows: repeat(7,30px);
+  grid-template-columns: 100px 50px 80px;
+  grid-auto-flow: column;
+
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  color: #334155;
+  border:1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding:1rem;
+  height:fit-content;
+
+  max-width: fit-content;
+  overflow-x: auto;
+  align-items: center;
+  justify-content: center;
+  margin:0 auto;
+}
+
+.time, .time-predict {
+  font-size: 0.875rem;
+  color: #334155;
+  padding: 0.25rem 0;
+  border-radius: 0.375rem;
+  text-align: center;
+
+}
+
+.time1 {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+.small-icon, .small-icon-predict{
+  display:flex;
+  
+  height: 30px;
+  justify-self: center;
+}
+
+.temp-today {
+  font-size: 1rem;
+  color: #0f172a;
+  font-weight: 500;
+  text-align: center;
+}
+
+
+.temp-today-predict{
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  display:flex;
+  gap:1rem;
+}
+
+.temp-today-predict span{
+  flex:1;
+
+}
+
+.expert-block{
+  display:grid;
+  grid-template-columns: repeat(2,8rem);
+  grid-template-rows: repeat(3,100px);
+  gap:1rem;
+}
+
+.expert{
+  display:flex;
+  flex-direction: column;
+  justify-content:space-between;
+
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  color: #334155;
+  border:1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding:0.75rem;
+  text-align: center;
+}
+
+.expert h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 0.5rem;
+}
+
+.expert-data {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.predict-container{
+  max-width: fit-content;
+  margin:0 auto;
+  display:grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.container{
+  display:none;
+}
