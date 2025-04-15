@@ -1,25 +1,24 @@
-*{
+* {
   box-sizing: border-box;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
-html{
-  font-size:16px;
-  
+html {
+  font-size: 16px;
 }
 
-body{
-  font-family: "Inter", sans-serif;
+body {
+  font-family: 'Inter', sans-serif;
 }
 
-.search-container{
-  display:flex;
-  max-width:300px;
-  padding:10px;
-  margin:0 auto;
+.search-container {
+  display: flex;
+  max-width: 500px;
+  padding: 10px;
+  margin: 0 auto;
   justify-content: center;
-  gap:5px;
+  gap: 5px;
 }
 
 #city {
@@ -29,7 +28,9 @@ body{
   border-radius: 0.5rem;
   font-size: 1rem;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 #city:focus {
@@ -45,7 +46,9 @@ body{
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
 }
 
 #search:hover {
@@ -56,128 +59,126 @@ body{
   transform: scale(0.98);
 }
 
-.current-card{
-  display:grid;
+.current-card {
+  display: grid;
 
   grid-template-columns: 1fr 100px;
-  grid-template-areas: 
-  "city date"
-  "current-temp icon"
-  "conditions icon"
-  "min-max icon";
+  grid-template-areas:
+    'city date'
+    'current-temp icon'
+    'conditions icon'
+    'min-max icon';
   row-gap: 0.1rem;
 
   background-color: #f0f4f8;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   color: #0f172a;
 
-  padding:1.5rem;
-  max-width:300px;
-  margin:0 auto;
-  border-radius:1rem;
+  padding: 1.5rem;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 1rem;
   align-items: center;
-
 }
 
-.city{
-  grid-area:city;
-  font-size:1.5rem;
+.city {
+  grid-area: city;
+  font-size: 1.5rem;
   font-weight: 600;
-  color:#1e3a8a;
+  color: #1e3a8a;
 }
 
-.date{
-  grid-area:date;
-  font-size:0.6rem;
-  color:#63748b;
+.date {
+  grid-area: date;
+  font-size: 0.6rem;
+  color: #63748b;
 }
 
-.current-temp{
-  grid-area:current-temp;
+.current-temp {
+  grid-area: current-temp;
   font-size: 3rem;
   font-weight: 600;
-  color:#0f172a;
+  color: #0f172a;
 }
 
-.icon{
-  grid-area:icon;
+.icon {
+  grid-area: icon;
 
-  width:100%;
+  width: 100%;
   align-self: center;
   justify-self: center;
-
 }
 
-
-
-.conditions{
-  grid-area:conditions;
-  font-size:1rem;
-  color:#475569;
+.conditions {
+  grid-area: conditions;
+  font-size: 1rem;
+  color: #475569;
 }
 
-.min-max{
-  grid-area:min-max;
-  display:flex;
-  gap:1rem;
+.min-max {
+  grid-area: min-max;
+  display: flex;
+  gap: 1rem;
   font-weight: 500;
 }
 
-.min, .min-predict{
-  color:#60a5fa
+.min,
+.min-predict {
+  color: #60a5fa;
 }
 
-.max, .max-predict{
-  color:#ef4444;
+.max,
+.max-predict {
+  color: #ef4444;
 }
 
-.today-predict-card{
-  display:grid;
-  grid-template-columns: repeat(10,50px);
-  gap:0.5rem;
+.today-predict-card {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  gap: 0.5rem;
 
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   color: #334155;
-  border:1px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
   border-radius: 1rem;
-  padding:1rem;
+  padding: 1rem;
 
   max-width: fit-content;
   overflow-x: auto;
   align-items: center;
   justify-content: center;
-  margin:1rem auto;
+  margin: 1rem auto;
 }
 
-.predict-card{
-  display:grid;
-  grid-template-rows: repeat(7,30px);
+.predict-card {
+  display: grid;
+  grid-template-rows: repeat(7, 30px);
   grid-template-columns: 100px 50px 80px;
   grid-auto-flow: column;
 
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   color: #334155;
-  border:1px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
   border-radius: 1rem;
-  padding:1rem;
-  height:fit-content;
+  padding: 1rem;
+  height: fit-content;
 
   max-width: fit-content;
   overflow-x: auto;
   align-items: center;
   justify-content: center;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
-.time, .time-predict {
+.time,
+.time-predict {
   font-size: 0.875rem;
   color: #334155;
   padding: 0.25rem 0;
   border-radius: 0.375rem;
   text-align: center;
-
 }
 
 .time1 {
@@ -185,9 +186,10 @@ body{
   font-weight: 600;
 }
 
-.small-icon, .small-icon-predict{
-  display:flex;
-  
+.small-icon,
+.small-icon-predict {
+  display: flex;
+
   height: 30px;
   justify-self: center;
 }
@@ -199,38 +201,36 @@ body{
   text-align: center;
 }
 
-
-.temp-today-predict{
+.temp-today-predict {
   font-size: 1rem;
   font-weight: 500;
   text-align: center;
-  display:flex;
-  gap:1rem;
+  display: flex;
+  gap: 1rem;
 }
 
-.temp-today-predict span{
-  flex:1;
-
+.temp-today-predict span {
+  flex: 1;
 }
 
-.expert-block{
-  display:grid;
-  grid-template-columns: repeat(2,8rem);
-  grid-template-rows: repeat(3,100px);
-  gap:1rem;
+.expert-block {
+  display: grid;
+  grid-template-columns: repeat(2, 8rem);
+  grid-template-rows: repeat(3, 100px);
+  gap: 1rem;
 }
 
-.expert{
-  display:flex;
+.expert {
+  display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content: space-between;
 
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
   color: #334155;
-  border:1px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
   border-radius: 0.75rem;
-  padding:0.75rem;
+  padding: 0.75rem;
   text-align: center;
 }
 
@@ -247,15 +247,74 @@ body{
   color: #0f172a;
 }
 
-.predict-container{
+.predict-container {
   max-width: fit-content;
-  margin:0 auto;
-  display:grid;
+  margin: 0 auto;
+  display: grid;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 }
 
-.container{
+.container {
+  display: none;
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.unit-label {
+  font-weight: 500;
+  color: #475569;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background-color: #1e3a8a;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.toggle input:checked + .slider {
+  transform: translateX(24px);
+  background-color: white;
+}
+
+.loader {
+  border: 5px solid #f3f3f3; 
+  border-top: 5px solid #3498db; 
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 2s linear infinite;
   display:none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

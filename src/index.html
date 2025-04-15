@@ -3,115 +3,167 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <title>Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="search-container">
+      <div class="loader"></div>
       <input type="text" name="city" id="city" />
       <button type="button" id="search">Search</button>
+      <div class="toggle-wrapper">
+        <span class="unit-label">°C</span>
+        <label class="toggle">
+          <input type="checkbox" id="unit-toggle">
+          <span class="slider"></span>
+        </label>
+        <span class="unit-label">°F</span>
+      </div>
     </div>
-   
+
     <div class="container">
       <div class="current-card">
         <div class="city"></div>
-        <div class="date">13.04.2025</div>
-        <div class="current-temp">17°</div>
-        <img class="icon" src="../icons/clear-day.svg">
-        <div class="conditions">Cloudy</div>
+        <div class="date"></div>
+        <div class="current-temp"></div>
+        <img class="icon"/>
+        <div class="conditions"></div>
         <div class="min-max">
-          <span class="min">23°</span><span class="max">6°</span>
+          <span class="min"></span><span class="max"></span>
         </div>
       </div>
       <div class="today-predict-card">
-        <div class="time time1">Now</div>
-        <div class="time time2">21</div>
-        <div class="time time3">22</div>
-        <div class="time time4">23</div>
-        <div class="time time5">00</div>
-        <div class="time time6">01</div>
-        <div class="time time7">02</div>
-        <div class="time time8">03</div>
-        <div class="time time9">04</div>
-        <div class="time time10">05</div>
-        <img src="../icons/clear-day.svg" class="small-icon" id="icon-today1">
-        <img src="../icons/clear-day.svg" class="small-icon" id="icon-today2">
-        <img src="../icons/fog.svg" class="small-icon" id="icon-today3">
-        <img src="../icons/clear-day.svg" class="small-icon" id="icon-today4">
-        <img src="../icons/clear-day.svg" class="small-icon" id="icon-today5">
-        <img src="../icons/clear-day.svg" class="small-icon" id="icon-today6">
-        <img src="../icons/clear-day.svg" class="small-icon" id="icon-today7">
-        <img src="../icons/clear-day.svg" class="small-icon" id="icon-today8">
-        <img src="../icons/clear-day.svg" class="small-icon" id="icon-today9">
-        <img src="../icons/clear-day.svg" class="small-icon" id="icon-today10">
-        <div class="temp-today temp1">17°</div>
-        <div class="temp-today temp2">17°</div>
-        <div class="temp-today temp3">17°</div>
-        <div class="temp-today temp4">17°</div>
-        <div class="temp-today temp5">17°</div>
-        <div class="temp-today temp6">17°</div>
-        <div class="temp-today temp7">17°</div>
-        <div class="temp-today temp8">17°</div>
-        <div class="temp-today temp9">17°</div>
-        <div class="temp-today temp10">17°</div>
+        <div class="time time1"></div>
+        <div class="time time2"></div>
+        <div class="time time3"></div>
+        <div class="time time4"></div>
+        <div class="time time5"></div>
+        <div class="time time6"></div>
+        <div class="time time7"></div>
+        <div class="time time8"></div>
+        <div class="time time9"></div>
+        <div class="time time10"></div>
+        <img class="small-icon" id="icon-today1" />
+        <img class="small-icon" id="icon-today2" />
+        <img class="small-icon" id="icon-today3" />
+        <img class="small-icon" id="icon-today4" />
+        <img class="small-icon" id="icon-today5" />
+        <img class="small-icon" id="icon-today6" />
+        <img class="small-icon" id="icon-today7" />
+        <img class="small-icon" id="icon-today8" />
+        <img class="small-icon" id="icon-today9" />
+        <img class="small-icon" id="icon-today10"/>
+        <div class="temp-today temp1"></div>
+        <div class="temp-today temp2"></div>
+        <div class="temp-today temp3"></div>
+        <div class="temp-today temp4"></div>
+        <div class="temp-today temp5"></div>
+        <div class="temp-today temp6"></div>
+        <div class="temp-today temp7"></div>
+        <div class="temp-today temp8"></div>
+        <div class="temp-today temp9"></div>
+        <div class="temp-today temp10"></div>
       </div>
       <div class="predict-container">
         <div class="predict-card">
-          <div class="time-predict time1">Now</div>
-          <div class="time-predict time2">21</div>
-          <div class="time-predict time3">22</div>
-          <div class="time-predict time4">23</div>
-          <div class="time-predict time5">00</div>
-          <div class="time-predict time6">01</div>
-          <div class="time-predict time7">02</div>
-          <img src="../icons/clear-day.svg" class="small-icon-predict" id="icon-predict1">
-          <img src="../icons/clear-day.svg" class="small-icon-predict" id="icon-predict3">
-          <img src="../icons/fog.svg" class="small-icon-predict" id="icon-predict3">
-          <img src="../icons/clear-day.svg" class="small-icon-predict" id="icon-predict4">
-          <img src="../icons/clear-day.svg" class="small-icon-predict" id="icon-predict5">
-          <img src="../icons/clear-day.svg" class="small-icon-predict" id="icon-predict6">
-          <img src="../icons/clear-day.svg" class="small-icon-predict" id="icon-predict7">
-          <div class="temp-today-predict temp1"><span class="min-predict">17</span>
-            <span class="max-predict">18</span></div>
-          <div class="temp-today-predict temp2">
-            <span class="min-predict">17</span>
-            <span class="max-predict">18</span>
+          <div class="time-predict time1"></div>
+          <div class="time-predict time2"></div>
+          <div class="time-predict time3"></div>
+          <div class="time-predict time4"></div>
+          <div class="time-predict time5"></div>
+          <div class="time-predict time6"></div>
+          <div class="time-predict time7"></div>
+          <img
+            class="small-icon-predict"
+            id="icon-predict1"
+          />
+          <img
+            class="small-icon-predict"
+            id="icon-predict2"
+          />
+          <img
+            class="small-icon-predict"
+            id="icon-predict3"
+          />
+          <img
+            class="small-icon-predict"
+            id="icon-predict4"
+          />
+          <img
+            class="small-icon-predict"
+            id="icon-predict5"
+          />
+          <img
+            class="small-icon-predict"
+            id="icon-predict6"
+          />
+          <img
+            class="small-icon-predict"
+            id="icon-predict7"
+          />
+          <div class="temp-today-predict temp1">
+            <span class="min-predict"></span>
+            <span class="max-predict"></span>
           </div>
-          <div class="temp-today-predict temp3"><span class="min-predict">17</span><span class="max-predict">18</span></div>
-          <div class="temp-today-predict temp4"><span class="min-predict">17</span><span class="max-predict">18</span></div>
-          <div class="temp-today-predict temp5"><span class="min-predict">17</span><span class="max-predict">18</span></div>
-          <div class="temp-today-predict temp6"><span class="min-predict">17</span><span class="max-predict">18</span></div>
-          <div class="temp-today-predict temp7"><span class="min-predict">17</span><span class="max-predict">18</span></div>
+          <div class="temp-today-predict temp2">
+            <span class="min-predict"></span>
+            <span class="max-predict"></span>
+          </div>
+          <div class="temp-today-predict temp3">
+            <span class="min-predict"></span
+            ><span class="max-predict"></span>
+          </div>
+          <div class="temp-today-predict temp4">
+            <span class="min-predict"></span
+            ><span class="max-predict"></span>
+          </div>
+          <div class="temp-today-predict temp5">
+            <span class="min-predict"></span
+            ><span class="max-predict"></span>
+          </div>
+          <div class="temp-today-predict temp6">
+            <span class="min-predict"></span
+            ><span class="max-predict"></span>
+          </div>
+          <div class="temp-today-predict temp7">
+            <span class="min-predict"></span
+            ><span class="max-predict"></span>
+          </div>
         </div>
         <div class="expert-block">
           <div class="expert sunrise">
             <h3>Sunrise</h3>
-            <div class="expert-data sunrise-data">17:00</div>
+            <div class="expert-data sunrise-data"></div>
           </div>
           <div class="expert sunset">
             <h3>Sunset</h3>
-            <div class="expert-data sunset-data">17:00</div>
+            <div class="expert-data sunset-data"></div>
           </div>
           <div class="expert feels-like">
             <h3>Feels Like</h3>
-            <div class="expert-data feels-like-data">+30</div>
+            <div class="expert-data feels-like-data"></div>
           </div>
           <div class="expert wind">
             <h3>Wind</h3>
-            <div class="expert-data wind-data">17:00</div>
+            <div class="expert-data wind-data"></div>
           </div>
           <div class="expert humidity">
             <h3>Humidity</h3>
-            <div class="expert-data humidity-data">17:00</div>
+            <div class="expert-data humidity-data"></div>
           </div>
           <div class="expert visibility">
             <h3>Visibility</h3>
-            <div class="expert-data visibility-data">17:00</div>
+            <div class="expert-data visibility-data"></div>
           </div>
         </div>
       </div>
     </div>
+
+
   </body>
 </html>

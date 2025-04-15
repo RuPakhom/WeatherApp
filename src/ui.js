@@ -87,7 +87,6 @@ export function renderExportCards(data) {
   const humidity = document.querySelector('.humidity-data')
   const visibility = document.querySelector('.visibility-data')
 
-  console.log(current)
   sunrise.textContent = current.sunrise
   sunset.textContent = current.sunset
   feelsLike.textContent = `${Math.round(current.feelslike)}°`

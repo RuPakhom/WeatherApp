@@ -5,16 +5,16 @@ function getAPIKey() {
   return process.env.API_KEY
 }
 
-export async function getWeather(city) {
+export async function getWeather(city, isFareheit) {
   try {
+    const unitGroup = isFareheit ? 'us' : 'metric'
     const searchParams = new URLSearchParams()
     searchParams.append('key', getAPIKey())
-    searchParams.append('unitGroup', 'metric')
+    searchParams.append('unitGroup', unitGroup)
     searchParams.append('iconSet', 'icons1')
-    console.log(searchParams.toString())
     const url = `${BASE_URL}${city}/today/next7days?${searchParams}`
     const response = await fetch(url, { mode: 'cors' })
-    if (!response.ok) throw 'Not valid city'
+    if (!response.ok) throw new Error('Not valid city')
     const json = await response.json()
     return json
   } catch (err) {
@@ -29,7 +29,6 @@ export function normalizeTodayData(data) {
   const today = data.days[0].hours
   const tomorrow = data.days[1].hours
   const result = arr.concat(today.slice(current), tomorrow).slice(0, 10)
-  console.log(result)
   return result
 }
 
